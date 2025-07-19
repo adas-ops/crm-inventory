@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FAFAFA; /* warm off-white */
+    --color-foreground: #1E293B; /* near-black with subtle warmth */
+    --color-border: #E2E8F0; /* light gray for borders */
+    --color-input: #FFFFFF; /* pure white for inputs */
+    --color-ring: #2563EB; /* professional blue for focus rings */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* pure white for cards */
+    --color-card-foreground: #1E293B; /* near-black text on cards */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* pure white for popovers */
+    --color-popover-foreground: #1E293B; /* near-black text on popovers */
+    
+    /* Muted Colors */
+    --color-muted: #F1F5F9; /* light gray background */
+    --color-muted-foreground: #64748B; /* medium gray text */
+    
+    /* Primary Colors */
+    --color-primary: #2563EB; /* professional blue */
+    --color-primary-foreground: #FFFFFF; /* white text on primary */
+    
+    /* Secondary Colors */
+    --color-secondary: #64748B; /* sophisticated slate */
+    --color-secondary-foreground: #FFFFFF; /* white text on secondary */
+    
+    /* Accent Colors */
+    --color-accent: #0EA5E9; /* lighter blue for secondary interactions */
+    --color-accent-foreground: #FFFFFF; /* white text on accent */
+    
+    /* Success Colors */
+    --color-success: #059669; /* professional green */
+    --color-success-foreground: #FFFFFF; /* white text on success */
+    
+    /* Warning Colors */
+    --color-warning: #D97706; /* amber for caution states */
+    --color-warning-foreground: #FFFFFF; /* white text on warning */
+    
+    /* Error/Destructive Colors */
+    --color-error: #DC2626; /* clear red for error states */
+    --color-error-foreground: #FFFFFF; /* white text on error */
+    --color-destructive: #DC2626; /* clear red for destructive actions */
+    --color-destructive-foreground: #FFFFFF; /* white text on destructive */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 150ms ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 200ms ease-out;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Shadow utilities */
+  .shadow-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-modal {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .shadow-dropdown {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .shadow-floating {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
